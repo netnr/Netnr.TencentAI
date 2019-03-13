@@ -10,9 +10,19 @@ namespace Netnr.TencentAI.Test
     {
         static void Main(string[] args)
         {
+            //所有方法
             var msg = GetMethodInfo();
             Console.WriteLine(msg);
 
+            //示例
+            Aid.APPID = 2112919356;
+            Aid.APPKEY = "Vqe3e9EBzi0r5wJK";
+
+            var result = string.Empty;
+
+            result = Nlp.Nlp_TextChat();
+
+            Console.WriteLine(result);
             Console.ReadLine();
         }
 
@@ -25,13 +35,15 @@ namespace Netnr.TencentAI.Test
             var dicClass = new Dictionary<string, string>();
             var dicMethod = new Dictionary<string, string>();
 
-            var ns = "Netnr.TencentAi";
+            var ns = "Netnr.TencentAI";
+            var nssub = "fcgi_bin";
+
             Assembly asm = Assembly.LoadFrom(AppDomain.CurrentDomain.BaseDirectory + $"/{ns}.dll");
             foreach (var dt in asm.DefinedTypes)
             {
-                if (dt.FullName.Contains(ns))
+                if (dt.FullName.Contains(ns) && dt.FullName.Contains(nssub))
                 {
-                    Type t = asm.GetType($"{ns}.fcgi_bin.{dt.Name}");
+                    Type t = asm.GetType($"{ns}.{nssub}.{dt.Name}");
                     var attrClass = Attribute.GetCustomAttribute(t, typeof(DescriptionAttribute)) as DescriptionAttribute;
                     dicClass.Add(dt.Name, attrClass?.Description ?? "");
 
@@ -41,7 +53,12 @@ namespace Netnr.TencentAI.Test
                         var attrMethod = Attribute.GetCustomAttribute(mh, typeof(DescriptionAttribute)) as DescriptionAttribute;
                         if (attrMethod != null)
                         {
-                            dicMethod.Add(mh.Name, attrMethod.Description);
+                            var isc = string.Empty;
+                            if (mh.ToString().Contains(ns))
+                            {
+                                isc = "【√】";
+                            }
+                            dicMethod.Add(mh.Name, attrMethod.Description + isc);
                         }
                     }
                 }

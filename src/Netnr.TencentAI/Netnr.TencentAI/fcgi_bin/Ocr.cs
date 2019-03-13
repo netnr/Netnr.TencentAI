@@ -1,18 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Netnr.TencentAI.Model;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 
-namespace Netnr.TencentAi.fcgi_bin
+namespace Netnr.TencentAI.fcgi_bin
 {
     [Description("OCR")]
     public class Ocr
     {
         [Description("身份证OCR")]
-        public static string Ocr_IdCardOcr()
+        public static string Ocr_IdCardOcr(Ocr_IdCardOcrRequest request)
         {
-            return "";
+            if (Aid.IsValid(request))
+            {
+                var uri = "https://api.ai.qq.com/fcgi-bin/ocr/ocr_idcardocr";
+                var result = HttpTo.Post(uri, Aid.Parameter(request));
+                return result;
+            }
+            return Aid.ValidFail();
         }
 
         [Description("行驶证驾驶证OCR")]
@@ -22,9 +25,15 @@ namespace Netnr.TencentAi.fcgi_bin
         }
 
         [Description("通用OCR")]
-        public static string Ocr_GeneralOcr()
+        public static string Ocr_GeneralOcr(Ocr_GeneralOcrRequest request)
         {
-            return "";
+            if (Aid.IsValid(request))
+            {
+                var uri = "https://api.ai.qq.com/fcgi-bin/ocr/ocr_generalocr";
+                var result = HttpTo.Post(uri, Aid.Parameter(request));
+                return result;
+            }
+            return Aid.ValidFail();
         }
 
         [Description("营业执照OCR")]

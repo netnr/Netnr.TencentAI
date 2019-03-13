@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 
-namespace Netnr.TencentAi.fcgi_bin
+namespace Netnr.TencentAI.fcgi_bin
 {
     [Description("图片特效")]
     public class Ptu

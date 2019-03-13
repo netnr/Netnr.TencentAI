@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Globalization;
 using System.Collections.Generic;
 
 /// <summary>
@@ -194,25 +193,13 @@ public static class Extend
     /// <returns></returns>
     public static string ToEncode(this string uri, string charset = "utf-8")
     {
-        string URL_ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~";
-
-        if (string.IsNullOrEmpty(uri))
-            return string.Empty;
-
-        const string escapeFlag = "%";
-        var encodedUri = new StringBuilder(uri.Length * 2);
-        var bytes = Encoding.GetEncoding(charset).GetBytes(uri);
-        foreach (var b in bytes)
-        {
-            char ch = (char)b;
-            if (URL_ALLOWED_CHARS.IndexOf(ch) != -1)
-                encodedUri.Append(ch);
-            else
-            {
-                encodedUri.Append(escapeFlag).Append(string.Format(CultureInfo.InstalledUICulture, "{0:X2}", (int)b));
-            }
-        }
-        return encodedUri.ToString();
+        var result = uri;
+#if net40
+        result = System.Web.HttpUtility.UrlEncode(uri);
+#else
+        result = System.Net.WebUtility.UrlEncode(uri);
+#endif
+        return result;
     }
 
     /// <summary>
@@ -240,4 +227,5 @@ public static class Extend
     {
         return (datetime.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
     }
+
 }

@@ -1,7 +1,7 @@
 # Netnr.TencentAI
 > Tencent AI SDK
 
-# `开发中...`
+# `开发中...` ,【√】表示已实现
 
 ### 方法命名
 - 根据接口/分割，最后是方法名，前面的是类、子类
@@ -19,14 +19,14 @@
   },
   "语音识别": {
     "Aai_Asr": "语音识别-echo版",
-    "Aai_Asrs": "语音识别-流式版（AI Lab",
+    "Aai_Asrs": "语音识别-流式版（AI Lab）",
     "Aai_WxAsrs": "流式版(WeChat AI)",
-    "Aai_WxAsrLong": "长语音识别",
+    "Aai_WxAsrLong": " 长语音识别",
     "Aai_DetectKeyWord": "关键词检索"
   },
   "语音合成": {
-    "Aai_Tts": "语音合成（AI Lab）",
-    "Aai_Tta": "语音合成（优图）"
+    "Aai_Tts": "语音合成（AI Lab）【√】",
+    "Aai_Tta": "语音合成（优图）【√】"
   },
   "人脸与人体识别": {
     "Face_DetectFace": "人脸检测与分析",
@@ -35,13 +35,13 @@
     "Face_FaceShape": "五官定位",
     "Face_FaceCompare": "人脸对比",
     "Face_FaceIdentify": "人脸搜索",
-    "Face_NewPerson": "人 脸搜索 > 个体创建",
+    "Face_NewPerson": "人脸搜索 > 个体创建",
     "Face_DelPerson": "人脸搜索 > 删除个体",
     "Face_AddFace": "人脸搜索 > 增加人脸",
     "Face_DelFace": "人脸搜索 > 删除人脸",
     "Face_SetInfo": "人脸搜索 > 设置信息",
     "Face_GetInfo": "人脸搜索 > 获取信息",
-    "Face_GetGroupIds": "人脸搜索 > 获 取组列表",
+    "Face_GetGroupIds": "人脸搜索 > 获取组列表",
     "Face_GetPersonIds": "人脸搜索 > 获取个体列表",
     "Face_GetFaceIds": "人脸搜索 > 获取人脸列表",
     "Face_GetFaceInfo": "人脸搜索 > 获取人脸信息",
@@ -53,10 +53,10 @@
     "Image_Food": "美食图片识别",
     "Vision_ImgToText": "看图说话",
     "Vision_Scener": "场景识别",
-    "Vision_Objectr": "场景识别"
+    "Vision_Objectr": "场景 识别"
   },
   "智能闲聊": {
-    "Nlp_TextChat": "智能闲聊"
+    "Nlp_TextChat": "智能闲聊【√】"
   },
   "机器翻译": {
     "Nlp_TextTrans": "文本翻译（AI Lab）",
@@ -65,7 +65,7 @@
     "Nlp_ImageTranslate": "机器翻译",
     "Nlp_TextDetect": "语种识别"
   },
-  "基础文本分析": {
+  "基 础文本分析": {
     "Nlp_WordSeg": "分词",
     "Nlp_WordPos": "词性",
     "Nlp_WordNer": "专有名词",
@@ -76,9 +76,9 @@
     "Nlp_TextPolar": "情感分析"
   },
   "OCR": {
-    "Ocr_IdCardOcr": "身份证OCR",
+    "Ocr_IdCardOcr": "身份证OCR【√】",
     "Ocr_DriverLicenseOcr": "行驶证驾驶证OCR",
-    "Ocr_GeneralOcr": "通用OCR",
+    "Ocr_GeneralOcr": "通用OCR【√】",
     "Ocr_BizLicenseOcr": "营业执照OCR",
     "Ocr_CreditCardOcr": "银行卡OCR",
     "Ocr_HandWritingOcr": "手写体OCR",
@@ -86,7 +86,7 @@
     "Ocr_BcOcr": "名片OCR"
   },
   "图片特效": {
-    "Ptu_ImgFilter": "图片滤镜（天天P图）,更适合人物图片",
+    "Ptu_ImgFilter": "图片滤镜（天天P图 ）,更适合人物图片",
     "Ptu_FaceCosmetic": "人脸美妆",
     "Ptu_FaceDecoration": "人脸变妆",
     "Ptu_FaceSticker": "大头贴",
@@ -102,3 +102,4 @@
 
 ### Source
 - <https://github.com/netnr/Netnr.TencentAI>
+- <https://gitee.com/netnr/Netnr.TencentAI>

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Netnr.TencentAI.Model;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 
-namespace Netnr.TencentAi.fcgi_bin
+namespace Netnr.TencentAI.fcgi_bin
 {
     public class Aai
     {
@@ -20,7 +17,7 @@ namespace Netnr.TencentAi.fcgi_bin
             return "";
         }
 
-        [Description("语音识别>语音识别-流式版（AI Lab")]
+        [Description("语音识别>语音识别-流式版（AI Lab）")]
         public static string Aai_Asrs()
         {
             return "";
@@ -45,15 +42,27 @@ namespace Netnr.TencentAi.fcgi_bin
         }
 
         [Description("语音合成>语音合成（AI Lab）")]
-        public static string Aai_Tts()
+        public static string Aai_Tts(Aai_TtsRequest request)
         {
-            return "";
+            if (Aid.IsValid(request))
+            {
+                var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_tts";
+                var result = HttpTo.Get(uri + "?" + Aid.Parameter(request));
+                return result;
+            }
+            return Aid.ValidFail();
         }
 
         [Description("语音合成>语音合成（优图）")]
-        public static string Aai_Tta()
+        public static string Aai_Tta(Aai_TtaRequest request)
         {
-            return "";
+            if (Aid.IsValid(request))
+            {
+                var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_tta";
+                var result = HttpTo.Get(uri + "?" + Aid.Parameter(request));
+                return result;
+            }
+            return Aid.ValidFail();
         }
     }
 }

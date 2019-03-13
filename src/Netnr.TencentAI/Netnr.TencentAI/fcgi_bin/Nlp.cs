@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Netnr.TencentAI.Model;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 
-namespace Netnr.TencentAi.fcgi_bin
+namespace Netnr.TencentAI.fcgi_bin
 {
     public class Nlp
     {
         [Description("智能闲聊>智能闲聊")]
-        public static string Nlp_TextChat()
+        public static string Nlp_TextChat(Nlp_TextChatRequest request)
         {
-            return "";
+            if (Aid.IsValid(request))
+            {
+                var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat";
+                var result = HttpTo.Get(uri + "?" + Aid.Parameter(request));
+                return result;
+            }
+            return Aid.ValidFail();
         }
 
         [Description("机器翻译>文本翻译（AI Lab）")]
