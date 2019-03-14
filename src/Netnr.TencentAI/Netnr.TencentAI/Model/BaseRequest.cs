@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Netnr.TencentAI.Model
+﻿namespace Netnr.TencentAI.Model
 {
     /// <summary>
     /// 请求公共参数

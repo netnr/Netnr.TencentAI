@@ -44,25 +44,15 @@ namespace Netnr.TencentAI.fcgi_bin
         [Description("语音合成>语音合成（AI Lab）")]
         public static string Aai_Tts(Aai_TtsRequest request)
         {
-            if (Aid.IsValid(request))
-            {
-                var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_tts";
-                var result = HttpTo.Get(uri + "?" + Aid.Parameter(request));
-                return result;
-            }
-            return Aid.ValidFail();
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_tts";
+            return Aid.Request(request, uri, "GET");
         }
 
         [Description("语音合成>语音合成（优图）")]
         public static string Aai_Tta(Aai_TtaRequest request)
         {
-            if (Aid.IsValid(request))
-            {
-                var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_tta";
-                var result = HttpTo.Get(uri + "?" + Aid.Parameter(request));
-                return result;
-            }
-            return Aid.ValidFail();
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_tta";
+            return Aid.Request(request, uri, "GET");
         }
     }
 }

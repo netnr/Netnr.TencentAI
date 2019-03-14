@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Netnr.TencentAI.Model;
+using System.ComponentModel;
 
 namespace Netnr.TencentAI.fcgi_bin
 {
@@ -6,9 +7,10 @@ namespace Netnr.TencentAI.fcgi_bin
     public class Face
     {
         [Description("人脸检测与分析")]
-        public static string Face_DetectFace()
+        public static string Face_DetectFace(Face_DetectFaceRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_detectface";
+            return Aid.Request(request, uri);
         }
 
         [Description("多人脸检测")]

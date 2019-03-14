@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Netnr.TencentAI.Model;
+using System.ComponentModel;
 
 namespace Netnr.TencentAI.fcgi_bin
 {
@@ -11,21 +12,24 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("图片识别>看图说话")]
-        public static string Vision_ImgToText()
+        public static string Vision_ImgToText(Vision_ImgToTextRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/vision/vision_imgtotext";
+            return Aid.Request(request, uri);
         }
 
         [Description("图片识别>场景识别")]
-        public static string Vision_Scener()
+        public static string Vision_Scener(Vision_ScenerRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/vision/vision_scener";
+            return Aid.Request(request, uri);
         }
 
-        [Description("图片识别>场景识别")]
-        public static string Vision_Objectr()
+        [Description("图片识别>物体识别")]
+        public static string Vision_Objectr(Vision_ObjectrRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/vision/vision_objectr";
+            return Aid.Request(request, uri);
         }
 
         [Description("敏感信息审核>图片鉴黄")]

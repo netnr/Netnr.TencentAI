@@ -8,25 +8,22 @@ namespace Netnr.TencentAI.fcgi_bin
         [Description("智能闲聊>智能闲聊")]
         public static string Nlp_TextChat(Nlp_TextChatRequest request)
         {
-            if (Aid.IsValid(request))
-            {
-                var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat";
-                var result = HttpTo.Get(uri + "?" + Aid.Parameter(request));
-                return result;
-            }
-            return Aid.ValidFail();
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat";
+            return Aid.Request(request, uri, "GET");
         }
 
         [Description("机器翻译>文本翻译（AI Lab）")]
-        public static string Nlp_TextTrans()
+        public static string Nlp_TextTrans(Nlp_TextTransRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_texttrans";
+            return Aid.Request(request, uri, "GET");
         }
 
         [Description("机器翻译>文本翻译（翻译君）")]
-        public static string Nlp_TextTranslate()
+        public static string Nlp_TextTranslate(Nlp_TextTranslateRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_texttranslate";
+            return Aid.Request(request, uri, "GET");
         }
 
         [Description("机器翻译>语音翻译")]

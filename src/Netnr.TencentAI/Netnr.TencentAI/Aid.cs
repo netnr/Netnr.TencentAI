@@ -161,6 +161,25 @@ namespace Netnr.TencentAI
             return "{\"ret\":4096,\"msg\":\"paramter invalid\",\"data\":{\"item_list\":[]}}";
         }
 
+        [Description("公用请求")]
+        public static string Request<T>(T entity, string uri, string type = "POST") where T : class, new()
+        {
+            if (IsValid(entity))
+            {
+                var result = string.Empty;
+                if (type == "POST")
+                {
+                    result = HttpTo.Post(uri, Parameter(entity));
+                }
+                else
+                {
+                    result = HttpTo.Get(uri + "?" + Parameter(entity));
+                }
+                return result;
+            }
+            return ValidFail();
+        }
+
         [Description("实体 转 Pars")]
         public static string Parameter<T>(T entity) where T : class, new()
         {

@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
+    <Description>Tencent AI SDK</Description>
+    <Copyright />
+    <PackageLicenseUrl>https://github.com/netnr/Netnr.TencentAI/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/netnr/Netnr.TencentAI</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/netnr/static/master/favicon.ico</PackageIconUrl>
+    <PackageTags>netnr Tencent AI</PackageTags>
+    <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">

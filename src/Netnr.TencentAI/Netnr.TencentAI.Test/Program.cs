@@ -20,10 +20,10 @@ namespace Netnr.TencentAI.Test
 
             var result = string.Empty;
 
-            result = Nlp.Nlp_TextChat();
+            //result = Nlp.Nlp_TextTranslate();
 
             Console.WriteLine(result);
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
         /// <summary>
