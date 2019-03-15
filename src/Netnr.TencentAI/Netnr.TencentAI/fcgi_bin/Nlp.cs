@@ -45,39 +45,45 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("基础文本分析>分词")]
-        public static string Nlp_WordSeg()
+        public static string Nlp_WordSeg(Nlp_WordSegRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_wordseg";
+            return Aid.Request(request, uri, "GET", "GBK");
         }
 
         [Description("基础文本分析>词性")]
-        public static string Nlp_WordPos()
+        public static string Nlp_WordPos(Nlp_WordPosRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_wordpos";
+            return Aid.Request(request, uri, "GET", "GBK");
         }
 
         [Description("基础文本分析>专有名词")]
-        public static string Nlp_WordNer()
+        public static string Nlp_WordNer(Nlp_WordNerRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_wordner";
+            return Aid.Request(request, uri, "GET", "GBK");
         }
 
         [Description("基础文本分析>同义词")]
-        public static string Nlp_WordSyn()
+        public static string Nlp_WordSyn(Nlp_WordSynRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_wordsyn";
+            return Aid.Request(request, uri, "GET", "GBK");
         }
 
         [Description("语义解析>意图成分")]
-        public static string Nlp_WordCom()
+        public static string Nlp_WordCom(Nlp_WordComRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_wordcom";
+            return Aid.Request(request, uri, "GET");
         }
 
         [Description("语义解析>情感分析")]
-        public static string Nlp_TextPolar()
+        public static string Nlp_TextPolar(Nlp_TextPolarRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_textpolar";
+            return Aid.Request(request, uri, "GET");
         }
     }
 }

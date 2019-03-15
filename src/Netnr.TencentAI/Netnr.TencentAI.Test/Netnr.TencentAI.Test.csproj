@@ -50,6 +50,7 @@
     <Compile Include="Ocr.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ptu.cs" />
     <Compile Include="Vision.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,9 +6,10 @@ namespace Netnr.TencentAI.fcgi_bin
     public class Vision
     {
         [Description("图片特效>图片滤镜（AI Lab）,更适合风景图片")]
-        public static string Vision_ImgFilter()
+        public static string Vision_ImgFilter(Vision_ImgFilterRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/vision/vision_imgfilter";
+            return Aid.Request(request, uri);
         }
 
         [Description("图片识别>看图说话")]

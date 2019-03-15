@@ -13,8 +13,9 @@ namespace Netnr.TencentAI
         /// <param name="url">地址</param>
         /// <param name="type">请求类型 默认GET </param>
         /// <param name="postData">POST发送内容 默认空</param>
+        /// <param name="charset">编码</param>
         /// <returns></returns>
-        public static HttpWebRequest HWRequest(string url, string type = "GET", string postData = "")
+        public static HttpWebRequest HWRequest(string url, string type = "GET", string postData = "", string charset = "utf-8")
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = type;
@@ -27,8 +28,8 @@ namespace Netnr.TencentAI
             if (type != "GET")
             {
                 //发送内容
-                byte[] bytes = Encoding.UTF8.GetBytes(postData);
-                request.ContentLength = Encoding.UTF8.GetBytes(postData).Length;
+                byte[] bytes = Encoding.GetEncoding(charset).GetBytes(postData);
+                request.ContentLength = Encoding.GetEncoding(charset).GetBytes(postData).Length;
                 Stream outputStream = request.GetRequestStream();
                 outputStream.Write(bytes, 0, bytes.Length);
                 outputStream.Close();
@@ -64,20 +65,22 @@ namespace Netnr.TencentAI
         /// 发送请求 得到请求结果
         /// </summary>
         /// <param name="request">HttpWebRequest对象 可通过HWRequest方法创建</param>
+        /// <param name="charset">编码</param>
         /// <returns></returns>
-        public static string Url(HttpWebRequest request)
+        public static string Url(HttpWebRequest request, string charset = "utf-8")
         {
-            return Url(request, Encoding.UTF8);
+            return Url(request, Encoding.GetEncoding(charset));
         }
 
         /// <summary>
         /// 发送 GET 请求 得到请求结果
         /// </summary>
         /// <param name="url">URL</param>
+        /// <param name="charset">编码</param>
         /// <returns></returns>
-        public static string Get(string url)
+        public static string Get(string url, string charset = "utf-8")
         {
-            return Url(HWRequest(url));
+            return Url(HWRequest(url, "GET", null, charset), Encoding.GetEncoding(charset));
         }
 
         /// <summary>
@@ -85,10 +88,11 @@ namespace Netnr.TencentAI
         /// </summary>
         /// <param name="url">URL</param>
         /// <param name="postData">发送内容</param>
+        /// <param name="charset">编码</param>
         /// <returns></returns>
-        public static string Post(string url, string postData)
+        public static string Post(string url, string postData, string charset = "utf-8")
         {
-            return Url(HWRequest(url, "POST", postData));
+            return Url(HWRequest(url, "POST", postData, charset));
         }
         #endregion
     }

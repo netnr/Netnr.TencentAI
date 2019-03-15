@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Netnr.TencentAI.Model;
+using System.ComponentModel;
 
 namespace Netnr.TencentAI.fcgi_bin
 {
@@ -6,9 +7,10 @@ namespace Netnr.TencentAI.fcgi_bin
     public class Ptu
     {
         [Description("图片滤镜（天天P图）,更适合人物图片")]
-        public static string Ptu_ImgFilter()
+        public static string Ptu_ImgFilter(Ptu_ImgFilterRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/ptu/ptu_imgfilter";
+            return Aid.Request(request, uri);
         }
 
         [Description("人脸美妆")]

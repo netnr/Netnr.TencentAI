@@ -18,7 +18,7 @@ namespace Netnr.TencentAI
         public static string APPKEY { get; set; }
 
         [Description("签名")]
-        public static string Sign(Dictionary<string, string> pairs, string appkey)
+        public static string Sign(Dictionary<string, string> pairs, string appkey, string charset = "utf-8")
         {
             var dic = pairs.OrderBy(x => x.Key);
 
@@ -27,7 +27,7 @@ namespace Netnr.TencentAI
             {
                 if (!string.IsNullOrEmpty(kv.Value))
                 {
-                    pair += kv.Key + "=" + Encode(kv.Value) + "&";
+                    pair += kv.Key + "=" + Encode(kv.Value, charset) + "&";
                 }
             }
 
@@ -39,7 +39,7 @@ namespace Netnr.TencentAI
         }
 
         [Description("签名")]
-        public static string Sign<T>(T model) where T : class, new()
+        public static string Sign<T>(T model, string charset = "utf-8") where T : class, new()
         {
             var m = model.GetType();
             var pis = m.GetProperties();
@@ -55,7 +55,7 @@ namespace Netnr.TencentAI
                 }
             }
 
-            var sign = Sign(pair, APPKEY);
+            var sign = Sign(pair, APPKEY, charset);
 
             return sign;
         }
@@ -86,7 +86,7 @@ namespace Netnr.TencentAI
         }
 
         [Description("验证是否有效")]
-        public static bool IsValid<T>(T entity, ref List<string> err) where T : class, new()
+        public static bool IsValid<T>(T entity, ref List<string> err, string charset = "utf-8") where T : class, new()
         {
             bool b = true;
 
@@ -143,16 +143,16 @@ namespace Netnr.TencentAI
             }
 
             //赋值签名
-            gt.GetProperty("sign").SetValue(entity, Sign(entity), null);
+            gt.GetProperty("sign").SetValue(entity, Sign(entity, charset), null);
 
             return b;
         }
 
         [Description("验证是否有效")]
-        public static bool IsValid<T>(T entity) where T : class, new()
+        public static bool IsValid<T>(T entity, string charset = "utf-8") where T : class, new()
         {
             var err = new List<string>();
-            return IsValid(entity, ref err);
+            return IsValid(entity, ref err, charset);
         }
 
         [Description("验证失败返回信息")]
@@ -162,18 +162,18 @@ namespace Netnr.TencentAI
         }
 
         [Description("公用请求")]
-        public static string Request<T>(T entity, string uri, string type = "POST") where T : class, new()
+        public static string Request<T>(T entity, string uri, string type = "POST", string charset = "utf-8") where T : class, new()
         {
-            if (IsValid(entity))
+            if (IsValid(entity, charset))
             {
                 var result = string.Empty;
                 if (type == "POST")
                 {
-                    result = HttpTo.Post(uri, Parameter(entity));
+                    result = HttpTo.Post(uri, Parameter(entity, charset), charset);
                 }
                 else
                 {
-                    result = HttpTo.Get(uri + "?" + Parameter(entity));
+                    result = HttpTo.Get(uri + "?" + Parameter(entity, charset), charset);
                 }
                 return result;
             }
@@ -181,7 +181,7 @@ namespace Netnr.TencentAI
         }
 
         [Description("实体 转 Pars")]
-        public static string Parameter<T>(T entity) where T : class, new()
+        public static string Parameter<T>(T entity, string charset = "utf-8") where T : class, new()
         {
             string result = string.Empty;
             var pis = entity.GetType().GetProperties();
@@ -190,7 +190,7 @@ namespace Netnr.TencentAI
                 string value = pi.GetValue(entity, null)?.ToString();
                 if (value != null)
                 {
-                    result += "&" + pi.Name + "=" + value.ToEncode();
+                    result += "&" + pi.Name + "=" + value.ToEncode(charset);
                 }
             }
             return result.TrimStart('&');

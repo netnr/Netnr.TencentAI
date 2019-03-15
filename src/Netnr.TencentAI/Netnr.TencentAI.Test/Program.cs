@@ -20,7 +20,7 @@ namespace Netnr.TencentAI.Test
 
             var result = string.Empty;
 
-            //result = Nlp.Nlp_TextTranslate();
+            //result = Nlp.Nlp_TextPolar();
 
             Console.WriteLine(result);
             Console.ReadKey();
