@@ -14,27 +14,31 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("人脸美妆")]
-        public static string Ptu_FaceCosmetic()
+        public static string Ptu_FaceCosmetic(Ptu_FaceCosmeticRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/ptu/ptu_facecosmetic";
+            return Aid.Request(request, uri);
         }
 
         [Description("人脸变妆")]
-        public static string Ptu_FaceDecoration()
+        public static string Ptu_FaceDecoration(Ptu_FaceDecorationRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/ptu/ptu_facedecoration";
+            return Aid.Request(request, uri);
         }
 
         [Description("大头贴")]
-        public static string Ptu_FaceSticker()
+        public static string Ptu_FaceSticker(Ptu_FaceStickerRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/ptu/ptu_facesticker";
+            return Aid.Request(request, uri);
         }
 
         [Description("颜龄检测")]
-        public static string Ptu_FaceAge()
+        public static string Ptu_FaceAge(Ptu_FaceAgeRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/ptu/ptu_faceage";
+            return Aid.Request(request, uri);
         }
     }
 }

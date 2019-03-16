@@ -27,21 +27,24 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("机器翻译>语音翻译")]
-        public static string Nlp_SpeechTranslate()
+        public static string Nlp_SpeechTranslate(Nlp_SpeechTranslateRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_speechtranslate";
+            return Aid.Request(request, uri);
         }
 
-        [Description("机器翻译>机器翻译")]
-        public static string Nlp_ImageTranslate()
+        [Description("机器翻译>图片翻译")]
+        public static string Nlp_ImageTranslate(Nlp_ImageTranslateRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_imagetranslate";
+            return Aid.Request(request, uri);
         }
 
         [Description("机器翻译>语种识别")]
-        public static string Nlp_TextDetect()
+        public static string Nlp_TextDetect(Nlp_TextDetectRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_textdetect";
+            return Aid.Request(request, uri);
         }
 
         [Description("基础文本分析>分词")]

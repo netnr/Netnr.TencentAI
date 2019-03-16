@@ -20,7 +20,7 @@ namespace Netnr.TencentAI.Test
 
             var result = string.Empty;
 
-            //result = Nlp.Nlp_TextPolar();
+            //result = Ptu.Ptu_FaceAge();
 
             Console.WriteLine(result);
             Console.ReadKey();

@@ -34,9 +34,10 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("敏感信息审核>图片鉴黄")]
-        public static string Vision_Porn()
+        public static string Vision_Porn(Vision_PornRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/vision/vision_porn";
+            return Aid.Request(request, uri);
         }
     }
 }

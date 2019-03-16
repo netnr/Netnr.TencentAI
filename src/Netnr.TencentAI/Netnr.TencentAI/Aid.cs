@@ -158,7 +158,7 @@ namespace Netnr.TencentAI
         [Description("验证失败返回信息")]
         public static string ValidFail()
         {
-            return "{\"ret\":4096,\"msg\":\"paramter invalid\",\"data\":{\"item_list\":[]}}";
+            return "{\"ret\":4096,\"msg\":\"paramter invalid\",\"data\":{}}";
         }
 
         [Description("公用请求")]

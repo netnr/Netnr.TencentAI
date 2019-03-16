@@ -27,9 +27,10 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("敏感信息审核>暴恐识别")]
-        public static string Image_Terrorism()
+        public static string Image_Terrorism(Image_TerrorismRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/image/image_terrorism";
+            return Aid.Request(request, uri);
         }
     }
 }

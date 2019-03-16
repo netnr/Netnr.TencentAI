@@ -21,6 +21,6 @@
         /// 尽可能唯一，长度上限64字节,一次请求ID
         /// </summary>
         [Required]
-        public string session_id { get; set; }
+        public string session_id { get; set; } = System.Guid.NewGuid().ToString("N");
     }
 }
