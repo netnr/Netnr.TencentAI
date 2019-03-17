@@ -23,26 +23,26 @@
     "Vision_Porn": "图片鉴黄【√】"
   },
   "语音识别": {
-    "Aai_Asr": "语音识别-echo版",
-    "Aai_Asrs": "语音识别-流式版（AI Lab）",
-    "Aai_WxAsrs": "流式版(WeChat AI)",
-    "Aai_WxAsrLong": "长语音识别",
-    "Aai_DetectKeyWord": "关键词检索"
+    "Aai_Asr": "语音识别-echo版【√】",
+    "Aai_Asrs": "语音识别-流式版（AI Lab）【√】",
+    "Aai_WxAsrs": "流式版(WeChat AI)【√】",
+    "Aai_WxAsrLong": "长语音识别【√】",
+    "Aai_DetectKeyWord": "关键词检索【√】"
   },
   "语音合成": {
     "Aai_Tts": "语音合成（AI Lab）【√】",
-    "Aai_Tta": "语 音合成（优图）【√】"
+    "Aai_Tta": "语音合成（优图）【√】"
   },
   "人脸与人体识别": {
     "Face_DetectFace": "人脸检测与分析【√】",
-    "Face_DetectMultiFace": "多人脸检测",
+    "Face_DetectMultiFace": "多人脸检测【√】",
     "Face_DetectCrossAgeFace": "跨年龄人脸识别",
     "Face_FaceShape": "五官定位",
     "Face_FaceCompare": "人脸对比",
     "Face_FaceIdentify": "人脸搜索",
     "Face_NewPerson": "人脸搜索 > 个体创建",
-    "Face_DelPerson": "人脸搜索 > 删除个体",
-    "Face_AddFace": "人脸搜索 > 增加 人脸",
+    "Face_DelPerson": "人脸搜索 > 删除个 体",
+    "Face_AddFace": "人脸搜索 > 增加人脸",
     "Face_DelFace": "人脸搜索 > 删除人脸",
     "Face_SetInfo": "人脸搜索 > 设置信息",
     "Face_GetInfo": "人脸搜索 > 获取信息",
@@ -65,19 +65,19 @@
   },
   "机器翻译": {
     "Nlp_TextTrans": "文本翻译（AI Lab）【√】",
-    "Nlp_TextTranslate": "文本翻译（翻译君）【√】",
-    "Nlp_SpeechTranslate": "语音翻译 【√】",
+    "Nlp_TextTranslate": "文本翻译（翻译君）【√ 】",
+    "Nlp_SpeechTranslate": "语音翻译【√】",
     "Nlp_ImageTranslate": "图片翻译【√】",
     "Nlp_TextDetect": "语种识别【√】"
   },
-  "基础文本分析": {
+  "基 础文本分析": {
     "Nlp_WordSeg": "分词【√】",
     "Nlp_WordPos": "词性【√】",
     "Nlp_WordNer": "专有名词【√】",
     "Nlp_WordSyn": "同义词【√】"
   },
   "语义解析": {
-    "Nlp_WordCom": " 意图成分【√】",
+    "Nlp_WordCom": "意图成分【√】",
     "Nlp_TextPolar": "情感分析【√】"
   },
   "OCR": {
@@ -96,7 +96,7 @@
     "Ptu_FaceDecoration": "人脸变妆【√】",
     "Ptu_FaceSticker": "大头贴【√】",
     "Ptu_FaceAge": "颜龄检测【√】",
-    "Vision_ImgFilter": "图片滤镜（AI Lab）, 更适合风景图片【√】"
+    "Vision_ImgFilter": "图片滤镜（AI Lab）,更适合风景图片【√】"
   }
 }
 ```

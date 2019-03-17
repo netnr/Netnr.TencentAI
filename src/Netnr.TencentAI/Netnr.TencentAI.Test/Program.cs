@@ -20,7 +20,7 @@ namespace Netnr.TencentAI.Test
 
             var result = string.Empty;
 
-            //result = Ptu.Ptu_FaceAge();
+            //result = Face.Face_DetectMultiFace();
 
             Console.WriteLine(result);
             Console.ReadKey();

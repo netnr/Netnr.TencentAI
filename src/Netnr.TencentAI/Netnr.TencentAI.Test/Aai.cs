@@ -8,12 +8,52 @@
         /// <returns></returns>
         public static string Aai_EvilAudio()
         {
-            var mo = new Model.Aai_EvilAudioRequest
-            {
-                speech_url = "http://fjdx.sc.chinaz.com/Files/DownLoad/sound1/201811/10786.mp3"
-            };
-            var result = fcgi_bin.Aai.Aai_EvilAudio();
-            return result;
+            return "待测试";
+        }
+
+        /// <summary>
+        /// 语音识别>语音识别-echo版
+        /// </summary>
+        /// <returns></returns>
+        public static string Aai_Asr()
+        {
+            return "待测试";
+        }
+
+        /// <summary>
+        /// 语音识别>语音识别-流式版（AI Lab）
+        /// </summary>
+        /// <returns></returns>
+        public static string Aai_Asrs()
+        {
+            return "待测试";
+        }
+
+        /// <summary>
+        /// 语音识别>流式版(WeChat AI)
+        /// </summary>
+        /// <returns></returns>
+        public static string Aai_WxAsrs()
+        {
+            return "待测试";
+        }
+
+        /// <summary>
+        /// 语音识别>长语音识别
+        /// </summary>
+        /// <returns></returns>
+        public static string Aai_WxAsrLong()
+        {
+            return "待测试";
+        }
+
+        /// <summary>
+        /// 语音识别>关键词检索
+        /// </summary>
+        /// <returns></returns>
+        public static string Aai_DetectKeyWord()
+        {
+            return "待测试";
         }
 
         /// <summary>

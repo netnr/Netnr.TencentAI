@@ -14,33 +14,38 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("语音识别>语音识别-echo版")]
-        public static string Aai_Asr()
+        public static string Aai_Asr(Aai_AsrRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_asr";
+            return Aid.Request(request, uri);
         }
 
         [Description("语音识别>语音识别-流式版（AI Lab）")]
-        public static string Aai_Asrs()
+        public static string Aai_Asrs(Aai_AsrsRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_asrs";
+            return Aid.Request(request, uri);
         }
 
         [Description("语音识别>流式版(WeChat AI)")]
-        public static string Aai_WxAsrs()
+        public static string Aai_WxAsrs(Aai_WxAsrsRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_wxasrs";
+            return Aid.Request(request, uri);
         }
 
         [Description("语音识别>长语音识别")]
-        public static string Aai_WxAsrLong()
+        public static string Aai_WxAsrLong(Aai_WxAsrLongRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_wxasrlong";
+            return Aid.Request(request, uri);
         }
 
         [Description("语音识别>关键词检索")]
-        public static string Aai_DetectKeyWord()
+        public static string Aai_DetectKeyWord(Aai_DetectKeyWordRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_detectkeyword";
+            return Aid.Request(request, uri);
         }
 
         [Description("语音合成>语音合成（AI Lab）")]

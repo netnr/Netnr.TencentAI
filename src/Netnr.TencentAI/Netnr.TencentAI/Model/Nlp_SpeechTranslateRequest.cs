@@ -18,7 +18,7 @@
         public int seq { get; set; } = 0;
 
         /// <summary>
-        /// 是否结束分片标识,0-中间分片 1-结束分片
+        /// 是否结束分片标识，0-中间分片 1-结束分片
         /// </summary>
         [Required]
         public int end { get; set; } = 1;

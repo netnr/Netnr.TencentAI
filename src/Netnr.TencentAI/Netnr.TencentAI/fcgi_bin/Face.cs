@@ -14,9 +14,10 @@ namespace Netnr.TencentAI.fcgi_bin
         }
 
         [Description("多人脸检测")]
-        public static string Face_DetectMultiFace()
+        public static string Face_DetectMultiFace(Face_DetectMultiFaceRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_detectmultiface";
+            return Aid.Request(request, uri);
         }
 
         [Description("跨年龄人脸识别")]
