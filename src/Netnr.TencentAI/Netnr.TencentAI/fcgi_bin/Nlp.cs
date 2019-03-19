@@ -3,8 +3,16 @@ using System.ComponentModel;
 
 namespace Netnr.TencentAI.fcgi_bin
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Nlp
     {
+        /// <summary>
+        /// 智能闲聊>智能闲聊
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("智能闲聊>智能闲聊")]
         public static string Nlp_TextChat(Nlp_TextChatRequest request)
         {
@@ -12,6 +20,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET");
         }
 
+        /// <summary>
+        /// 机器翻译>文本翻译（AI Lab）
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("机器翻译>文本翻译（AI Lab）")]
         public static string Nlp_TextTrans(Nlp_TextTransRequest request)
         {
@@ -19,6 +32,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET");
         }
 
+        /// <summary>
+        /// 机器翻译>文本翻译（翻译君）
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("机器翻译>文本翻译（翻译君）")]
         public static string Nlp_TextTranslate(Nlp_TextTranslateRequest request)
         {
@@ -26,6 +44,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET");
         }
 
+        /// <summary>
+        /// 机器翻译>语音翻译
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("机器翻译>语音翻译")]
         public static string Nlp_SpeechTranslate(Nlp_SpeechTranslateRequest request)
         {
@@ -33,6 +56,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 机器翻译>图片翻译
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("机器翻译>图片翻译")]
         public static string Nlp_ImageTranslate(Nlp_ImageTranslateRequest request)
         {
@@ -40,6 +68,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 机器翻译>语种识别
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("机器翻译>语种识别")]
         public static string Nlp_TextDetect(Nlp_TextDetectRequest request)
         {
@@ -47,6 +80,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 基础文本分析>分词
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("基础文本分析>分词")]
         public static string Nlp_WordSeg(Nlp_WordSegRequest request)
         {
@@ -54,6 +92,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET", "GBK");
         }
 
+        /// <summary>
+        /// 基础文本分析>词性
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("基础文本分析>词性")]
         public static string Nlp_WordPos(Nlp_WordPosRequest request)
         {
@@ -61,6 +104,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET", "GBK");
         }
 
+        /// <summary>
+        /// 基础文本分析>专有名词
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("基础文本分析>专有名词")]
         public static string Nlp_WordNer(Nlp_WordNerRequest request)
         {
@@ -68,6 +116,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET", "GBK");
         }
 
+        /// <summary>
+        /// 基础文本分析>同义词
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("基础文本分析>同义词")]
         public static string Nlp_WordSyn(Nlp_WordSynRequest request)
         {
@@ -75,6 +128,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET", "GBK");
         }
 
+        /// <summary>
+        /// 语义解析>意图成分
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("语义解析>意图成分")]
         public static string Nlp_WordCom(Nlp_WordComRequest request)
         {
@@ -82,6 +140,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri, "GET");
         }
 
+        /// <summary>
+        /// 语义解析>情感分析
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("语义解析>情感分析")]
         public static string Nlp_TextPolar(Nlp_TextPolarRequest request)
         {

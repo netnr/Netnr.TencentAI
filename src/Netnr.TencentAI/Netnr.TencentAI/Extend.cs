@@ -190,6 +190,7 @@ public static class Extend
     /// 编码
     /// </summary>
     /// <param name="uri"></param>
+    /// <param name="charset"></param>
     /// <returns></returns>
     public static string ToEncode(this string uri, string charset = "utf-8")
     {

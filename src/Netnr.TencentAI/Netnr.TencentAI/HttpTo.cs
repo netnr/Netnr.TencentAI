@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Netnr.TencentAI
 {
+    /// <summary>
+    /// HTTP请求
+    /// </summary>
     public class HttpTo
     {
         #region 服务器 发送请求

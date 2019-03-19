@@ -9,14 +9,30 @@ using System.Text;
 
 namespace Netnr.TencentAI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Aid
     {
+        /// <summary>
+        /// APPID
+        /// </summary>
         [Description("APPID")]
         public static int APPID { get; set; }
 
+        /// <summary>
+        /// APPKEY
+        /// </summary>
         [Description("APPKEY")]
         public static string APPKEY { get; set; }
 
+        /// <summary>
+        /// 签名
+        /// </summary>
+        /// <param name="pairs">参数字典</param>
+        /// <param name="appkey">APPKEY</param>
+        /// <param name="charset">编码格式</param>
+        /// <returns></returns>
         [Description("签名")]
         public static string Sign(Dictionary<string, string> pairs, string appkey, string charset = "utf-8")
         {
@@ -38,6 +54,13 @@ namespace Netnr.TencentAI
             return sign;
         }
 
+        /// <summary>
+        /// 签名
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="model">参数实体</param>
+        /// <param name="charset">编码格式</param>
+        /// <returns></returns>
         [Description("签名")]
         public static string Sign<T>(T model, string charset = "utf-8") where T : class, new()
         {
@@ -60,6 +83,12 @@ namespace Netnr.TencentAI
             return sign;
         }
 
+        /// <summary>
+        /// 签名编码，编码格式需要转成大写
+        /// </summary>
+        /// <param name="uri">字符串</param>
+        /// <param name="charset">编码格式</param>
+        /// <returns></returns>
         [Description("签名编码，编码格式需要转成大写")]
         public static string Encode(string uri, string charset = "utf-8")
         {
@@ -85,7 +114,15 @@ namespace Netnr.TencentAI
             return encodedUri.ToString();
         }
 
-        [Description("验证是否有效")]
+        /// <summary>
+        /// 验证实体值是否有效
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity">实体</param>
+        /// <param name="err">错误项</param>
+        /// <param name="charset">编码格式</param>
+        /// <returns></returns>
+        [Description("验证实体值是否有效")]
         public static bool IsValid<T>(T entity, ref List<string> err, string charset = "utf-8") where T : class, new()
         {
             bool b = true;
@@ -148,19 +185,39 @@ namespace Netnr.TencentAI
             return b;
         }
 
-        [Description("验证是否有效")]
+        /// <summary>
+        /// 验证实体值是否有效
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity">实体</param>
+        /// <param name="charset">编码格式</param>
+        /// <returns></returns>
+        [Description("验证实体值是否有效")]
         public static bool IsValid<T>(T entity, string charset = "utf-8") where T : class, new()
         {
             var err = new List<string>();
             return IsValid(entity, ref err, charset);
         }
 
-        [Description("验证失败返回信息")]
+        /// <summary>
+        /// 验证实体值失败返回信息
+        /// </summary>
+        /// <returns></returns>
+        [Description("验证实体值失败返回信息")]
         public static string ValidFail()
         {
             return "{\"ret\":4096,\"msg\":\"paramter invalid\",\"data\":{}}";
         }
 
+        /// <summary>
+        /// 公用请求
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity">实体</param>
+        /// <param name="uri">接口</param>
+        /// <param name="type">请求类型</param>
+        /// <param name="charset">编码格式</param>
+        /// <returns></returns>
         [Description("公用请求")]
         public static string Request<T>(T entity, string uri, string type = "POST", string charset = "utf-8") where T : class, new()
         {
@@ -180,7 +237,14 @@ namespace Netnr.TencentAI
             return ValidFail();
         }
 
-        [Description("实体 转 Pars")]
+        /// <summary>
+        /// 实体转Pars
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity">实体</param>
+        /// <param name="charset">编码格式</param>
+        /// <returns></returns>
+        [Description("实体转Pars")]
         public static string Parameter<T>(T entity, string charset = "utf-8") where T : class, new()
         {
             string result = string.Empty;
@@ -196,7 +260,13 @@ namespace Netnr.TencentAI
             return result.TrimStart('&');
         }
 
-        [Description("MD5加密 小写")]
+        /// <summary>
+        /// MD5加密（小写）
+        /// </summary>
+        /// <param name="s">字符串</param>
+        /// <param name="len">长度</param>
+        /// <returns></returns>
+        [Description("MD5加密（小写）")]
         public static string MD5(string s, int len = 32)
         {
             string result = "";

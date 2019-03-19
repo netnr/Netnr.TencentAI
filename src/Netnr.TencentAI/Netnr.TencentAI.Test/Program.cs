@@ -11,16 +11,15 @@ namespace Netnr.TencentAI.Test
         static void Main(string[] args)
         {
             //所有方法
-            var msg = GetMethodInfo();
-            Console.WriteLine(msg);
+            string msg = GetMethodInfo();
+            //Console.WriteLine(msg);
 
             //示例
             Aid.APPID = 2112919356;
             Aid.APPKEY = "Vqe3e9EBzi0r5wJK";
 
-            var result = string.Empty;
-
-            //result = Face.Face_DetectMultiFace();
+            string result = string.Empty;
+            result = Ocr.Ocr_GeneralOcr();
 
             Console.WriteLine(result);
             Console.ReadKey();
@@ -32,56 +31,55 @@ namespace Netnr.TencentAI.Test
         /// <returns></returns>
         public static string GetMethodInfo()
         {
-            var dicClass = new Dictionary<string, string>();
-            var dicMethod = new Dictionary<string, string>();
+            Dictionary<string, string> dicClass = new Dictionary<string, string>();
+            Dictionary<string, string> dicMethod = new Dictionary<string, string>();
 
-            var ns = "Netnr.TencentAI";
-            var nssub = "fcgi_bin";
+            string ns = "Netnr.TencentAI";
+            string nssub = "fcgi_bin";
 
             Assembly asm = Assembly.LoadFrom(AppDomain.CurrentDomain.BaseDirectory + $"/{ns}.dll");
-            foreach (var dt in asm.DefinedTypes)
+            foreach (TypeInfo dt in asm.DefinedTypes)
             {
                 if (dt.FullName.Contains(ns) && dt.FullName.Contains(nssub))
                 {
                     Type t = asm.GetType($"{ns}.{nssub}.{dt.Name}");
-                    var attrClass = Attribute.GetCustomAttribute(t, typeof(DescriptionAttribute)) as DescriptionAttribute;
+                    DescriptionAttribute attrClass = Attribute.GetCustomAttribute(t, typeof(DescriptionAttribute)) as DescriptionAttribute;
                     dicClass.Add(dt.Name, attrClass?.Description ?? "");
 
-                    var mhs = t.GetMethods();
-                    foreach (var mh in mhs)
+                    MethodInfo[] mhs = t.GetMethods();
+                    foreach (MethodInfo mh in mhs)
                     {
-                        var attrMethod = Attribute.GetCustomAttribute(mh, typeof(DescriptionAttribute)) as DescriptionAttribute;
-                        if (attrMethod != null)
+                        if (Attribute.GetCustomAttribute(mh, typeof(DescriptionAttribute)) is DescriptionAttribute attrMethod)
                         {
-                            var isc = string.Empty;
+                            string isc = string.Empty;
                             if (mh.ToString().Contains(ns))
                             {
-                                isc = "【√】";
+                                isc = "";
                             }
                             dicMethod.Add(mh.Name, attrMethod.Description + isc);
                         }
                     }
                 }
             }
-            var listKey = dicMethod.Keys.ToList();
+            List<string> listKey = dicMethod.Keys.ToList();
 
-            var dic = new Dictionary<string, Dictionary<string, string>>();
+            Dictionary<string, Dictionary<string, string>> dic = new Dictionary<string, Dictionary<string, string>>();
 
-            foreach (var methodKey in listKey)
+            foreach (string methodKey in listKey)
             {
-                var key = methodKey.Split('_')[0];
-                var classDesc = dicClass[key];
-                var desc = dicMethod[methodKey];
+                string key = methodKey.Split('_')[0];
+                string classDesc = dicClass[key];
+                string desc = dicMethod[methodKey];
                 if (!string.IsNullOrWhiteSpace(classDesc))
                 {
                     desc = classDesc + ">" + desc;
                     dicMethod[methodKey] = desc;
                 }
 
-                var dcs = desc.Split('>').ToList();
-                var dcskey = dcs[0];
+                List<string> dcs = desc.Split('>').ToList();
+                string dcskey = dcs[0];
                 dcs.RemoveAt(0);
-                var dcsval = string.Join(" > ", dcs);
+                string dcsval = string.Join(" > ", dcs);
 
                 if (dic.ContainsKey(dcskey))
                 {
@@ -89,7 +87,7 @@ namespace Netnr.TencentAI.Test
                 }
                 else
                 {
-                    var dicitem = new Dictionary<string, string>
+                    Dictionary<string, string> dicitem = new Dictionary<string, string>
                     {
                         { methodKey, dcsval }
                     };

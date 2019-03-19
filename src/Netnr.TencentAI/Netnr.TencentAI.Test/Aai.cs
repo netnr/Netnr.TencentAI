@@ -8,7 +8,15 @@
         /// <returns></returns>
         public static string Aai_EvilAudio()
         {
-            return "待测试";
+            Model.Aai_EvilAudioRequest mo = new Model.Aai_EvilAudioRequest
+            {
+                keyword_detect = 0,
+                speech_url = "http://xmdx.sc.chinaz.com/files/download/sound1/201811/10786.wav"
+            };
+
+            //string result = fcgi_bin.Aai.Aai_EvilAudio(mo);
+            //return result;
+            return "待测试，报签名错误，暂时没找到原因";
         }
 
         /// <summary>
@@ -62,12 +70,12 @@
         /// <returns></returns>
         public static string Aai_Tts()
         {
-            var mo = new Model.Aai_TtsRequest
+            Model.Aai_TtsRequest mo = new Model.Aai_TtsRequest
             {
                 text = "Hi，我是netnr"
             };
 
-            var result = fcgi_bin.Aai.Aai_Tts(mo);
+            string result = fcgi_bin.Aai.Aai_Tts(mo);
             return result;
         }
 
@@ -77,12 +85,12 @@
         /// <returns></returns>
         public static string Aai_Tta()
         {
-            var mo = new Model.Aai_TtaRequest
+            Model.Aai_TtaRequest mo = new Model.Aai_TtaRequest
             {
                 text = "Hi，我是netnr"
             };
 
-            var result = fcgi_bin.Aai.Aai_Tta(mo);
+            string result = fcgi_bin.Aai.Aai_Tta(mo);
             return result;
         }
     }

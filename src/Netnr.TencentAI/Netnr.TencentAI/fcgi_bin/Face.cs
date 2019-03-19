@@ -3,9 +3,17 @@ using System.ComponentModel;
 
 namespace Netnr.TencentAI.fcgi_bin
 {
+    /// <summary>
+    /// 人脸与人体识别
+    /// </summary>
     [Description("人脸与人体识别")]
     public class Face
     {
+        /// <summary>
+        /// 人脸与人体识别>人脸检测与分析
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("人脸检测与分析")]
         public static string Face_DetectFace(Face_DetectFaceRequest request)
         {
@@ -13,6 +21,11 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>多人脸检测
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [Description("多人脸检测")]
         public static string Face_DetectMultiFace(Face_DetectMultiFaceRequest request)
         {
@@ -20,94 +33,169 @@ namespace Netnr.TencentAI.fcgi_bin
             return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>跨年龄人脸识别
+        /// </summary>
+        /// <returns></returns>
         [Description("跨年龄人脸识别")]
-        public static string Face_DetectCrossAgeFace()
+        public static string Face_DetectCrossAgeFace(Face_DetectCrossAgeFaceRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_detectcrossageface";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>五官定位
+        /// </summary>
+        /// <returns></returns>
         [Description("五官定位")]
-        public static string Face_FaceShape()
+        public static string Face_FaceShape(Face_FaceShapeRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_faceshape";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸对比
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸对比")]
-        public static string Face_FaceCompare()
+        public static string Face_FaceCompare(Face_FaceCompareRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_facecompare";
+            return Aid.Request(request, uri);
         }
 
-        [Description("人脸搜索")]
-        public static string Face_FaceIdentify()
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>人脸搜索
+        /// </summary>
+        /// <returns></returns>
+        [Description("人脸搜索>人脸搜索")]
+        public static string Face_FaceIdentify(Face_FaceIdentifyRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_facecompare";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>个体创建
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>个体创建")]
-        public static string Face_NewPerson()
+        public static string Face_NewPerson(Face_NewPersonRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_newperson";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>删除个体
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>删除个体")]
-        public static string Face_DelPerson()
+        public static string Face_DelPerson(Face_DelPersonRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_delperson";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>增加人脸
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>增加人脸")]
-        public static string Face_AddFace()
+        public static string Face_AddFace(Face_AddFaceRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_addface";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>删除人脸
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>删除人脸")]
-        public static string Face_DelFace()
+        public static string Face_DelFace(Face_DelFaceRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_delface";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>设置信息
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>设置信息")]
-        public static string Face_SetInfo()
+        public static string Face_SetInfo(Face_SetInfoRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_getinfo";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>获取信息
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>获取信息")]
-        public static string Face_GetInfo()
+        public static string Face_GetInfo(Face_GetInfoRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_getinfo";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>获取组列表
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>获取组列表")]
-        public static string Face_GetGroupIds()
+        public static string Face_GetGroupIds(Face_GetGroupIdsRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_getgroupids";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>获取个体列表
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>获取个体列表")]
-        public static string Face_GetPersonIds()
+        public static string Face_GetPersonIds(Face_GetPersonIdsRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_getpersonids";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>获取人脸列表
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>获取人脸列表")]
-        public static string Face_GetFaceIds()
+        public static string Face_GetFaceIds(Face_GetFaceIdsRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_getfaceids";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸搜索>获取人脸信息
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸搜索>获取人脸信息")]
-        public static string Face_GetFaceInfo()
+        public static string Face_GetFaceInfo(Face_GetFaceInfoRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_getfaceinfo";
+            return Aid.Request(request, uri);
         }
 
+        /// <summary>
+        /// 人脸与人体识别>人脸验证
+        /// </summary>
+        /// <returns></returns>
         [Description("人脸验证")]
-        public static string Face_FaceVerify()
+        public static string Face_FaceVerify(Face_FaceVerifyRequest request)
         {
-            return "";
+            var uri = "https://api.ai.qq.com/fcgi-bin/face/face_faceverify";
+            return Aid.Request(request, uri);
         }
     }
 }
