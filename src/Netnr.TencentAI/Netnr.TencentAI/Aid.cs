@@ -226,11 +226,11 @@ namespace Netnr.TencentAI
                 var result = string.Empty;
                 if (type == "POST")
                 {
-                    result = HttpTo.Post(uri, Parameter(entity, charset), charset);
+                    result = Core.HttpTo.Post(uri, Parameter(entity, charset), charset);
                 }
                 else
                 {
-                    result = HttpTo.Get(uri + "?" + Parameter(entity, charset), charset);
+                    result = Core.HttpTo.Get(uri + "?" + Parameter(entity, charset), charset);
                 }
                 return result;
             }
