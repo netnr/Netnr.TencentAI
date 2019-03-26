@@ -10,13 +10,12 @@
         {
             Model.Aai_EvilAudioRequest mo = new Model.Aai_EvilAudioRequest
             {
-                keyword_detect = 0,
                 speech_url = "http://xmdx.sc.chinaz.com/files/download/sound1/201811/10786.wav"
             };
 
-            //string result = fcgi_bin.Aai.Aai_EvilAudio(mo);
-            //return result;
-            return "待测试，报签名错误，暂时没找到原因";
+            string result = fcgi_bin.Aai.Aai_EvilAudio(mo);
+            return result;
+            //return "待测试，报签名错误，暂时没找到原因";
         }
 
         /// <summary>

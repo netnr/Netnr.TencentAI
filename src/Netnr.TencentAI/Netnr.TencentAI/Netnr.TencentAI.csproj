@@ -11,7 +11,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <DocumentationFile>H:\ROOM\Netnr.TencentAI\src\Netnr.TencentAI\Netnr.TencentAI\Netnr.TencentAI.xml</DocumentationFile>
     <Version>1.0.0</Version>
-    <PackageLicenseUrl>https://github.com/netnr/Netnr.TencentAI/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <Authors>netnr</Authors>
   </PropertyGroup>
 

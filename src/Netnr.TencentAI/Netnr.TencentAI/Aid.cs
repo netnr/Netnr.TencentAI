@@ -223,7 +223,7 @@ namespace Netnr.TencentAI
         {
             if (IsValid(entity, charset))
             {
-                var result = string.Empty;
+                string result;
                 if (type == "POST")
                 {
                     result = Core.HttpTo.Post(uri, Parameter(entity, charset), charset);

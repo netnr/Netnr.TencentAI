@@ -787,22 +787,22 @@
         </member>
         <member name="P:Netnr.TencentAI.Model.BaseRequest.app_id">
             <summary>
-            应用标识（AppId）
+            【公共参数】应用标识（AppId）
             </summary>
         </member>
         <member name="P:Netnr.TencentAI.Model.BaseRequest.time_stamp">
             <summary>
-            请求时间戳（秒级）
+            【公共参数】请求时间戳（秒级）
             </summary>
         </member>
         <member name="P:Netnr.TencentAI.Model.BaseRequest.nonce_str">
             <summary>
-            非空且长度上限32字节 随机字符串
+            【公共参数】非空且长度上限32字节 随机字符串
             </summary>
         </member>
         <member name="P:Netnr.TencentAI.Model.BaseRequest.sign">
             <summary>
-            非空且长度固定32字节 签名信息，详见接口鉴权
+            【公共参数】非空且长度固定32字节 签名信息，详见接口鉴权
             </summary>
         </member>
         <member name="T:Netnr.TencentAI.Model.Face_AddFaceRequest">

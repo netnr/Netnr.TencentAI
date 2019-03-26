@@ -15,7 +15,7 @@ namespace Netnr.TencentAI.fcgi_bin
         [Description("敏感信息审核>音频鉴黄/敏感词检测")]
         public static string Aai_EvilAudio(Aai_EvilAudioRequest request)
         {
-            var uri = "	https://api.ai.qq.com/fcgi-bin/aai/aai_evilaudio";
+            var uri = "https://api.ai.qq.com/fcgi-bin/aai/aai_evilaudio";
             return Aid.Request(request, uri, "GET");
         }
 

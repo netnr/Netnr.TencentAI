@@ -19,6 +19,7 @@ namespace Netnr.TencentAI.Test
             Aid.APPKEY = "Vqe3e9EBzi0r5wJK";
 
             string result = string.Empty;
+
             result = Ocr.Ocr_GeneralOcr();
 
             Console.WriteLine(result);
